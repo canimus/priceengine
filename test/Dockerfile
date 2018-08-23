@@ -1,0 +1,4 @@
+FROM python:3.6.5-slim
+
+RUN pip install --upgrade pip
+RUN pip install pytest pandas numpy scikit-learn sympy zstandard zeep pychalk allure-pytest
