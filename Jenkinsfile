@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'python:3.6.5-slim' }
+    }
 
     stages {
         stage('Build') {
@@ -10,6 +12,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh 'python -V'
+                sh 'pip list'
             }
         }
         stage('Deploy') {
