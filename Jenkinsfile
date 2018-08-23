@@ -7,6 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'pip install --upgrade pip'
             }
         }
         stage('Test') {
