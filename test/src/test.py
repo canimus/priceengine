@@ -17,3 +17,6 @@ def test_run2():
 
 def test_connection():
     assert True
+
+def test_inception():
+    assert True
