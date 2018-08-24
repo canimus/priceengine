@@ -12,3 +12,5 @@ def test_tear_down():
 def test_move():
     assert True
 
+def test_run2():
+    assert True
