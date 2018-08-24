@@ -1,0 +1,6 @@
+FROM java:8-jre-alpine
+
+WORKDIR /tmp
+COPY allure-2.7.0.zip .
+RUN unzip allure-2.7.0.zip
+

@@ -1,0 +1,28 @@
+version: '3'
+services:
+  pytest:
+    build: 
+      context: .
+      dockerfile: Dockerfile_build
+    volumes:
+      - ./src:/usr/src
+      - ./res:/tmp/res
+    working_dir: /usr/src
+    command: pytest -v --alluredir=/tmp/res
+  allure:
+    build: 
+      context: .
+      dockerfile: Dockerfile_report
+    volumes:       
+      - ./res:/usr/src
+    ports:
+      - "8181:8181"
+    depends_on: 
+      - pytest
+    entrypoint:
+      - /tmp/allure-2.7.0/bin/allure 
+      - serve 
+      - -p 
+      - "8181" 
+      - /usr/src
+    
