@@ -14,3 +14,6 @@ def test_move():
 
 def test_run2():
     assert True
+
+def test_connection():
+    assert True
